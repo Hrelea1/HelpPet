@@ -38,16 +38,18 @@
 
     <!-- Hero Section -->
     <section id="acasa" class="hero">
-        <img src="assets/hero.png" alt="Cabinet Veterinar HelpPets For Life" class="hero-bg">
-        <div class="container">
+        <div class="container hero-grid">
             <div class="hero-content reveal">
-                <span class="badge">Îngrijire Premium 24/7</span>
-                <h1>Prietenul tău merită cele mai bune îngrijiri</h1>
-                <p>La cabinetul veterinar HelpPets For Life din Craiova, oferim servicii medicale de top, cu pasiune și empatie pentru animalele tale de companie.</p>
+                <span class="subheading">Cabinet Veterinar · Craiova Bariera</span>
+                <h1>Prietenul tău merită cele mai bune <em>îngrijiri</em></h1>
+                <p>La HelpPets For Life din Craiova, oferim servicii medicale veterinare cu pasiune și empatie, pentru că sănătatea animalelor tale contează cu adevărat.</p>
                 <div class="hero-btns">
-                    <a href="tel:+40766397087" class="btn btn-primary">Sună Acum</a>
-                    <a href="#servicii" class="btn btn-outline">Vezi Serviciile</a>
+                    <a href="tel:+40766397087" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Sună Acum</a>
+                    <a href="#servicii" class="btn btn-outline">Serviciile noastre</a>
                 </div>
+            </div>
+            <div class="hero-image reveal">
+                <img src="assets/hero.png" alt="Cabinet Veterinar HelpPets For Life">
             </div>
         </div>
     </section>
@@ -84,13 +86,9 @@
         <div class="container about-grid">
             <div class="about-image reveal">
                 <img src="assets/about.png" alt="Echipa HelpPets For Life">
-                <div class="experience-badge">
-                    <span class="num">10+</span>
-                    <span class="text">Ani de Experiență</span>
-                </div>
             </div>
             <div class="about-content reveal">
-                <span class="badge">Despre Noi</span>
+                <span class="subheading">Despre Noi</span>
                 <h2>Pasiune pentru sănătatea animalelor</h2>
                 <p>La HelpPets For Life, considerăm că fiecare animal de companie este un membru al familiei. De aceea, abordăm fiecare caz cu maximă atenție, profesionalism și o doză uriașă de dragoste.</p>
                 <p>Cabinetul nostru din zona Bariera Vâlcii este dotat cu aparatură de ultimă generație pentru a oferi diagnostice rapide și tratamente eficiente, asigurând confortul și siguranța pacienților noștri.</p>
@@ -109,6 +107,21 @@
                         <i class="fa-solid fa-check-circle"></i> Farmacie veterinară
                     </div>
                 </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">Ani de Experiență</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">15k+</div>
+                        <div class="stat-label">Pacienți Fericiți</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">Proprietari Mulțumiți</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -117,7 +130,7 @@
     <section id="servicii" class="section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="badge">Ce Oferim</span>
+                <span class="subheading">Ce Oferim</span>
                 <h2 class="section-title">Serviciile Noastre</h2>
                 <p class="section-subtitle">Oferim o gamă completă de servicii medical-veterinare pentru a ne asigura că prietenul tău blănos se bucură de o viață lungă și sănătoasă.</p>
             </div>
@@ -178,7 +191,7 @@
     <section id="contact" class="section section-light">
         <div class="container">
             <div class="section-header reveal">
-                <span class="badge">Contact & Locație</span>
+                <span class="subheading">Contact & Locație</span>
                 <h2 class="section-title">Suntem aici pentru tine</h2>
                 <p class="section-subtitle">Vizitează-ne la cabinet sau contactează-ne telefonic pentru a stabili o programare.</p>
             </div>
@@ -278,9 +291,88 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2026 HelpPets For Life. Toate drepturile rezervate. Design creat cu ♥.</p>
+                <div class="footer-legal">
+                    <a href="politica-cookies.html" id="link-politica-cookies">Politica de Cookies</a>
+                    <span class="footer-sep">·</span>
+                    <a href="politica-cookies.html#confidentialitate" id="link-confidentialitate">Confidențialitate & GDPR</a>
+                    <span class="footer-sep">·</span>
+                    <a href="#" id="open-cookie-settings">Setări Cookies</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Consimțământ cookie-uri" aria-modal="true" hidden>
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                <strong>Respectăm confidențialitatea ta</strong>
+                <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri analitice pentru a înțelege cum este utilizat site-ul. Nu vândem datele tale nimănui. <a href="politica-cookies.html" id="cookies-more-link">Citește politica noastră</a>.</p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button id="cookie-accept-all" class="cookie-btn cookie-btn-accept">Accept toate</button>
+                <button id="cookie-accept-necessary" class="cookie-btn cookie-btn-necessary">Doar necesare</button>
+                <button id="cookie-open-settings" class="cookie-btn cookie-btn-settings">Personalizează</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-modal" class="cookie-modal" role="dialog" aria-modal="true" aria-label="Setări cookies" hidden>
+        <div class="cookie-modal-overlay" id="cookie-modal-overlay"></div>
+        <div class="cookie-modal-box">
+            <div class="cookie-modal-header">
+                <h2>Setări preferințe cookies</h2>
+                <button class="cookie-modal-close" id="cookie-modal-close" aria-label="Închide">&times;</button>
+            </div>
+            <div class="cookie-modal-body">
+                <p>Controlează ce tipuri de cookie-uri sunt stocate pe dispozitivul tău. Cookie-urile necesare nu pot fi dezactivate, deoarece site-ul nu funcționează fără ele.</p>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <div>
+                            <strong>Cookie-uri necesare</strong>
+                            <p>Asigură funcționalitățile de bază ale site-ului, cum ar fi navigarea și accesul la zone securizate.</p>
+                        </div>
+                        <label class="cookie-toggle cookie-toggle--disabled" aria-label="Întotdeauna active">
+                            <input type="checkbox" checked disabled>
+                            <span class="cookie-toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <div>
+                            <strong>Cookie-uri analitice</strong>
+                            <p>Ne ajută să înțelegem cum interacționezi cu site-ul, astfel încât să îl îmbunătățim continuu (de ex. Google Analytics).</p>
+                        </div>
+                        <label class="cookie-toggle" aria-label="Cookie-uri analitice">
+                            <input type="checkbox" id="cookie-analytics">
+                            <span class="cookie-toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <div>
+                            <strong>Cookie-uri de marketing</strong>
+                            <p>Permit afișarea de reclame relevante pe alte platforme pe baza vizitelor tale pe site-ul nostru.</p>
+                        </div>
+                        <label class="cookie-toggle" aria-label="Cookie-uri de marketing">
+                            <input type="checkbox" id="cookie-marketing">
+                            <span class="cookie-toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-modal-footer">
+                <button id="cookie-save-settings" class="cookie-btn cookie-btn-accept">Salvează preferințele</button>
+                <button id="cookie-accept-all-modal" class="cookie-btn cookie-btn-necessary">Accept toate</button>
+            </div>
+        </div>
+    </div>
 
     <!-- JS -->
     <script src="js/script.js"></script>
