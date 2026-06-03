@@ -636,6 +636,18 @@ img {
   font-size: 0.875rem;
 }
 
+.footer-bottom a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.footer-bottom a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 .footer-legal {
   margin-top: 0.75rem;
   display: flex;
