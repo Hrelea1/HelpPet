@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html class="scroll-smooth" lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -86,319 +86,403 @@
     }
     </script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-paw"></i>
-                Help<span>Pets</span>
+    <!-- Luxury Navigation Header -->
+    <header class="glass-effect">
+        <nav class="container navbar">
+            <div class="nav-brand" onclick="window.location.href='#home'">
+                <div class="paw-container">
+                    <div class="paw-bg"></div>
+                    <span class="material-symbols-outlined paw-icon" style="font-variation-settings: 'FILL' 1;">pets</span>
+                </div>
+                <span class="brand-text">HelpPets<span>For Life</span></span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a class="nav-link active" href="#home">ACASĂ</a>
+                <a class="nav-link" href="#despre">DESPRE NOI</a>
+                <a class="nav-link" href="#servicii">SERVICII</a>
+                <a class="nav-link" href="#contact">CONTACT</a>
+            </div>
+            
+            <a class="btn btn-primary btn-pill button-hover-effect" href="tel:+40766397087">
+                <span class="material-symbols-outlined" style="font-size: 16px;">call</span>
+                Programări
             </a>
             
-            <button class="mobile-menu-btn">
-                <i class="fa-solid fa-bars"></i>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Deschide meniul">
+                <span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
             </button>
-            
-            <ul class="nav-links">
-                <li><a href="#acasa" class="nav-link">Acasă</a></li>
-                <li><a href="#despre" class="nav-link">Despre Noi</a></li>
-                <li><a href="#servicii" class="nav-link">Servicii</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="tel:+40766397087" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 0766 397 087</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="acasa" class="hero">
+    <section class="hero-section" id="home">
+        <div class="hero-bg-gradient"></div>
         <div class="container hero-grid">
-            <div class="hero-content reveal">
-                <span class="subheading">Cabinet Veterinar · Craiova Bariera</span>
-                <h1>Prietenul tău merită cele mai bune <em>îngrijiri</em></h1>
-                <p>La HelpPets For Life din Craiova, oferim servicii medicale veterinare cu pasiune și empatie, pentru că sănătatea animalelor tale contează cu adevărat.</p>
-                <div class="hero-btns">
-                    <a href="tel:+40766397087" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Sună Acum</a>
-                    <a href="#servicii" class="btn btn-outline">Serviciile noastre</a>
+            <div class="hero-text-col reveal">
+                <div class="hero-badge">
+                    <span class="ping-dot">
+                        <span class="pulse"></span>
+                        <span class="dot"></span>
+                    </span>
+                    <span>Craiova Bariera · Standarde Europene</span>
+                </div>
+                <h1 class="hero-title">
+                    Unde empatia întâlnește <br/>
+                    <span>medicina de elită</span>
+                </h1>
+                <p class="hero-desc">
+                    La HelpPets For Life, redefinim îngrijirea veterinară prin tehnologie avansată și o conexiune profundă cu pacienții noștri necuvântători. Sănătatea lor este o promisiune pe care o onorăm în fiecare zi.
+                </p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary button-hover-effect" href="tel:+40766397087">APEL URGENȚĂ</a>
+                    <a class="btn btn-outline button-hover-effect" href="#servicii">
+                        EXPLOREAZĂ SERVICIILE
+                        <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+                    </a>
                 </div>
             </div>
-            <div class="hero-image reveal">
-                <img src="assets/hero.png" alt="Cabinet Veterinar HelpPets For Life">
+            
+            <div class="hero-image-col reveal" style="transition-delay: 200ms;">
+                <div class="hero-image-wrapper glass-effect border-white/50">
+                    <div class="hero-image-inner">
+                        <img id="hero-img" alt="Pet care at HelpPets" src="https://lh3.googleusercontent.com/aida/AP1WRLsLGVT0cFj_A6Yig6EknLc2S-WQaloe_MoOYWTHMt195Z4VfnYwzw3wRQv3QivGSt5dGRASJGdFK27YB83SHiZfQgZHjx1-juuqITK7uN3P08VgZme3niPASIoz6UbzpxBhHpAacVdc99H-yMZZAxMgvinpAkiYNlOBWBbon1qIKvY99Hq3o2GTnXn0J42JZoh9d32jwEz2xKuIHPikCHWrTteVdKmxWlFuQQsZ8Sqvb4goLxn_bIOFVc5G"/>
+                        <div class="hero-image-overlay"></div>
+                    </div>
+                </div>
+                <!-- Decorative luxury background blur accents -->
+                <div class="blur-blob-1"></div>
+                <div class="blur-blob-2"></div>
             </div>
         </div>
     </section>
 
-    <!-- Info Banner -->
-    <div class="info-banner">
-        <div class="container reveal">
-            <div class="info-item">
-                <i class="fa-solid fa-user-doctor"></i>
-                <div>
+    <!-- Floating Banner Section -->
+    <div class="banner-offset">
+        <div class="container">
+            <div class="banner-box glass-effect border-white/60">
+                <div class="banner-item reveal">
+                    <div class="banner-icon-box">
+                        <span class="material-symbols-outlined">verified_user</span>
+                    </div>
                     <h4>Medici Specialiști</h4>
-                    <p>Echipă dedicată și empatică</p>
+                    <p>Peste 15 ani de expertiză clinică în medicină internă.</p>
                 </div>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-microscope"></i>
-                <div>
-                    <h4>Echipamente Moderne</h4>
-                    <p>Diagnostic precis și rapid</p>
+                <div class="banner-item banner-item-center reveal" style="transition-delay: 150ms;">
+                    <div class="banner-icon-box">
+                        <span class="material-symbols-outlined">biotech</span>
+                    </div>
+                    <h4>Tehnologie 4.0</h4>
+                    <p>Diagnosticare instantă prin laborator propriu modern.</p>
                 </div>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-heart-pulse"></i>
-                <div>
-                    <h4>Urgențe Veterinare</h4>
-                    <p>Suntem aici când ai nevoie</p>
+                <div class="banner-item reveal" style="transition-delay: 300ms;">
+                    <div class="banner-icon-box">
+                        <span class="material-symbols-outlined">emergency_share</span>
+                    </div>
+                    <h4>Unitate Urgențe</h4>
+                    <p>Răspuns critic și suport continuu pentru pacienți.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- About Section -->
-    <section id="despre" class="section section-light about">
-        <div class="container about-grid">
-            <div class="about-image reveal">
-                <img src="assets/about.png" alt="Echipa HelpPets For Life">
-            </div>
-            <div class="about-content reveal">
-                <span class="subheading">Despre Noi</span>
-                <h2>Pasiune pentru sănătatea animalelor</h2>
-                <p>La HelpPets For Life, considerăm că fiecare animal de companie este un membru al familiei. De aceea, abordăm fiecare caz cu maximă atenție, profesionalism și o doză uriașă de dragoste.</p>
-                <p>Cabinetul nostru din zona Bariera Vâlcii este dotat cu aparatură de ultimă generație pentru a oferi diagnostice rapide și tratamente eficiente, asigurând confortul și siguranța pacienților noștri.</p>
-                
-                <div class="features-list">
-                    <div class="feature-item">
-                        <i class="fa-solid fa-check-circle"></i> Tratamente personalizate
+    <!-- Bento Style About Section -->
+    <section class="section-gap despre-section" id="despre">
+        <div class="container bento-grid-container">
+            <!-- Content Card -->
+            <div class="despre-text-col reveal">
+                <p class="despre-badge">Esența Valorilor Noastre</p>
+                <h2 class="despre-title">Inovație în slujba <br/><span>iubirii necondiționate</span></h2>
+                <p class="despre-desc">
+                    La HelpPets For Life, am creat un sanctuar medical unde fiecare detaliu este gândit pentru a reduce stresul prietenilor noștri blănoși.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-pill">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">spa</span>
+                        <span>Mediu Calm (Fear-Free)</span>
                     </div>
-                    <div class="feature-item">
-                        <i class="fa-solid fa-check-circle"></i> Mediu prietenos și calm
+                    <div class="feature-pill">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">science</span>
+                        <span>Protocoale Clinice Moderne</span>
                     </div>
-                    <div class="feature-item">
-                        <i class="fa-solid fa-check-circle"></i> Sfaturi de nutriție
+                    <div class="feature-pill">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+                        <span>Nutriție de Specialitate</span>
                     </div>
-                    <div class="feature-item">
-                        <i class="fa-solid fa-check-circle"></i> Farmacie veterinară
+                    <div class="feature-pill">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+                        <span>Istoric Digital Complet</span>
                     </div>
                 </div>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-num">10+</div>
-                        <div class="stat-label">Ani de Experiență</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-num">15k+</div>
-                        <div class="stat-label">Pacienți Fericiți</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-num">100%</div>
-                        <div class="stat-label">Proprietari Mulțumiți</div>
-                    </div>
+            </div>
+            
+            <!-- Image Bento Grid -->
+            <div class="despre-bento-col reveal" style="transition-delay: 200ms;">
+                <div class="bento-item bento-item-large">
+                    <img alt="Clinical Excellence at HelpPets" src="https://lh3.googleusercontent.com/aida/AP1WRLuGYWJJZUkvmliOCLq_nNYj8CjTykWYi2Val3hZuMfFH6pMCHE04IF-9gKEp6du16pWdSXzYzXBmcWMbqbtxhUGnZTOiAn27YE5y98F94NrT5PyAXZE1kgcpoxzvW_qAFVAWxprjq_1m0gKzT3L6JjBtaNlbcISVMBADJHHlODQbS21jsRdlGb7takZ-mVIYi5tSoZzziCRDmhlfpxWq1MlqovYGZDw6TBrnkIvrWtVtbpKN025ZSq11JXD"/>
+                    <div class="bento-overlay"></div>
+                </div>
+                <div class="bento-item bento-stat-green">
+                    <p class="bento-num">100%</p>
+                    <p class="bento-label">Rata de Satisfacție a Proprietarilor</p>
+                </div>
+                <div class="bento-item bento-stat-gold">
+                    <p class="bento-num">15k+</p>
+                    <p class="bento-label">Pacienți Îngrijiți cu succes</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicii" class="section">
+    <!-- Services Luxury Bento Section -->
+    <section class="section-gap services-section" id="servicii">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="subheading">Ce Oferim</span>
-                <h2 class="section-title">Serviciile Noastre</h2>
-                <p class="section-subtitle">Oferim o gamă completă de servicii medical-veterinare pentru a ne asigura că prietenul tău blănos se bucură de o viață lungă și sănătoasă.</p>
+            <div class="services-header reveal">
+                <div class="services-title-area">
+                    <p class="services-badge">Excelență în Servicii</p>
+                    <h2 class="services-title">Soluții medicale de <br/> <span>nouă generație</span></h2>
+                </div>
+                <a class="all-services-link" href="#contact">
+                    <span>VEZI TOATE SERVICIILE</span>
+                    <span class="arrow-circle">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">arrow_outward</span>
+                    </span>
+                </a>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-stethoscope"></i>
+            <div class="services-grid reveal">
+                <!-- Large Card -->
+                <div class="fancy-card fancy-card-large group">
+                    <div>
+                        <div class="card-icon-box">
+                            <span class="material-symbols-outlined">stethoscope</span>
+                        </div>
+                        <h3>Consultații de Specialitate</h3>
+                        <p>
+                            Evaluări clinice profunde, susținute de experiența vastă a echipei noastre, pentru diagnosticarea precoce a oricărei afecțiuni.
+                        </p>
                     </div>
-                    <h3>Consultații Generale</h3>
-                    <p>Examinări de rutină și de specialitate pentru a evalua starea de sănătate a animalului tău.</p>
+                    <div class="card-tags">
+                        <span class="tag-pill">Cardiologie</span>
+                        <span class="tag-pill">Dermatologie</span>
+                        <span class="tag-pill">Neurologie</span>
+                    </div>
                 </div>
                 
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-syringe"></i>
+                <!-- Standard Card 1 -->
+                <div class="fancy-card fancy-card-standard group">
+                    <div class="card-icon-box">
+                        <span class="material-symbols-outlined">vaccines</span>
                     </div>
-                    <h3>Vaccinări & Deparazitări</h3>
-                    <p>Pachete complete de imunizare și prevenție împotriva paraziților interni și externi.</p>
+                    <h3>Profilaxie</h3>
+                    <p>Vaccinări și deparazitări cu produse de top, adaptate stilului de viață.</p>
                 </div>
                 
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-scissors"></i>
+                <!-- Standard Card 2 -->
+                <div class="fancy-card fancy-card-standard group">
+                    <div class="card-icon-box">
+                        <span class="material-symbols-outlined">content_cut</span>
                     </div>
-                    <h3>Chirurgie</h3>
-                    <p>Intervenții chirurgicale realizate în condiții de maximă siguranță, cu monitorizare permanentă.</p>
+                    <h3>Micro-Chirurgie</h3>
+                    <p>Intervenții minim invazive realizate sub monitorizare vitală permanentă.</p>
                 </div>
                 
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-flask"></i>
+                <!-- Standard Card 3 -->
+                <div class="fancy-card fancy-card-standard group">
+                    <div class="card-icon-box">
+                        <span class="material-symbols-outlined">lab_research</span>
                     </div>
-                    <h3>Analize de Laborator</h3>
-                    <p>Teste de sânge, biochimie și analize microscopice realizate rapid pentru diagnosticare corectă.</p>
+                    <h3>Laborator</h3>
+                    <p>Biochimie, hematologie și teste rapide în mai puțin de 30 minute.</p>
                 </div>
                 
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-tooth"></i>
+                <!-- Standard Card 4 -->
+                <div class="fancy-card fancy-card-standard group">
+                    <div class="card-icon-box">
+                        <span class="material-symbols-outlined">dentistry</span>
                     </div>
                     <h3>Stomatologie</h3>
-                    <p>Detartraj cu ultrasunete, extracții și igienizare profesională pentru un zâmbet sănătos.</p>
-                </div>
-                
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-bath"></i>
-                    </div>
-                    <h3>Cosmetică Felină/Canină</h3>
-                    <p>Tuns, spălat, toaletare urechi și tăiat unghii, realizate de groomeri profesioniști.</p>
+                    <p>Detartraj ultrasonic și intervenții chirurgicale dentare premium.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section section-light">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="subheading">Contact & Locație</span>
-                <h2 class="section-title">Suntem aici pentru tine</h2>
-                <p class="section-subtitle">Vizitează-ne la cabinet sau contactează-ne telefonic pentru a stabili o programare.</p>
+    <!-- Contact & Location Section -->
+    <section class="section-gap contact-section" id="contact">
+        <div class="container contact-grid-container">
+            <div class="contact-info-col reveal">
+                <p class="contact-badge">Vino să ne cunoști</p>
+                <h2 class="contact-title">Locație &amp; <br/> <span>Disponibilitate</span></h2>
+                <div class="contact-details-list">
+                    <div class="contact-detail-block">
+                        <div class="contact-detail-icon">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <div class="contact-detail-content">
+                            <h4>Clinica Craiova</h4>
+                            <p>Strada Bariera Vâlcii nr. 17B, <br/>Craiova, Dolj, 200100</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail-block">
+                        <div class="contact-detail-icon">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div class="contact-detail-content">
+                            <h4>Program de lucru</h4>
+                            <div class="hours-schedule">
+                                <div class="schedule-row">
+                                    <span>Luni - Vineri</span>
+                                    <span>09:00 - 19:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span>Sâmbătă</span>
+                                    <span>09:00 - 14:00</span>
+                                </div>
+                                <div class="schedule-alert">
+                                    <span class="material-symbols-outlined">event_busy</span>
+                                    <span>Duminică: Urgențe Majore Doar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="contact-grid">
-                <div class="contact-info reveal">
-                    <div class="contact-card">
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Adresă</h4>
-                                <p>Strada Bariera Vâlcii nr. 17B<br>Craiova, 200100</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Telefon (Programări)</h4>
-                                <a href="tel:+40766397087">0766 397 087</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Program Luni - Vineri</h4>
-                                <p>09:00 - 19:00</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Program Sâmbătă</h4>
-                                <p>09:00 - 14:00 (Duminică închis)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-map reveal">
-                    <div class="map-container">
-                        <!-- Google Maps Embed for Cabinet Veterinar Craiova - Bariera -->
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2850.5362142279183!2d23.817823576402434!3d44.35242327107722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4752d720e5c42fd5%3A0xf857cf204cc7b702!2sCabinet%20veterinar%20Craiova%20-%20BARIERA!5e0!3m2!1sen!2sro!4v1700000000000!5m2!1sen!2sro" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+            <div class="contact-map-col reveal" style="transition-delay: 200ms;">
+                <div class="map-offset-bg"></div>
+                <div class="map-wrapper">
+                    <!-- Google Maps Embed for Cabinet Veterinar Craiova - Bariera -->
+                    <iframe 
+                        title="Harta interactive Cabinet Veterinar Craiova - HelpPets For Life"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2850.5362142279183!2d23.817823576402434!3d44.35242327107722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4752d720e5c42fd5%3A0xf857cf204cc7b702!2sCabinet%20veterinar%20Craiova%20-%20BARIERA!5e0!3m2!1sen!2sro!4v1700000000000!5m2!1sen!2sro" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Testimonials Slider Section -->
+    <section class="section-gap testimonials-section" id="testimoniale">
+        <div class="container">
+            <div class="testimonials-title-area reveal">
+                <p class="testimonials-badge">Voci de Încredere</p>
+                <h2 class="testimonials-title">Ce spun <span>prietenii noștri</span></h2>
+            </div>
+            
+            <div class="slider-outer-wrapper reveal" style="transition-delay: 150ms;">
+                <div class="slider-container glass-effect border-white/60">
+                    <div class="testimonial-slide-box">
+                        <div class="stars-rating">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <blockquote class="testimonial-quote" id="testimonial-quote">
+                            "O experiență cu adevărat premium. Atenția la detalii și dragostea pentru animale se simt în fiecare colț al clinicii."
+                        </blockquote>
+                        <div class="testimonial-author-wrapper">
+                            <div class="author-separator"></div>
+                            <cite class="author-name" id="testimonial-author">Elena &amp; Luna</cite>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined quote-bg-icon">format_quote</span>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prev-testimonial-btn" aria-label="Testimonialul anterior">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button class="slider-btn" id="next-testimonial-btn" aria-label="Testimonialul următor">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="#" class="logo">
-                        <i class="fa-solid fa-paw"></i>
-                        Help<span>Pets</span>
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <div class="footer-logo">
+                    <span class="material-symbols-outlined">pets</span>
+                    <h3>HelpPets <br/><span>For Life</span></h3>
+                </div>
+                <p class="footer-desc">
+                    Unde pasiunea pentru viață se întâlnește cu rigoarea științifică. Excelență medicală veterinară în inima Craiovei.
+                </p>
+                <div class="footer-socials">
+                    <a class="social-circle" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <span class="material-symbols-outlined text-base" style="font-size: 18px;">face_nod</span>
                     </a>
-                    <p>Cabinetul veterinar unde iubirea pentru animale întâlnește excelența medicală. Sănătatea prietenului tău este prioritatea noastră.</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Link-uri Rapide</h3>
-                    <div class="footer-links">
-                        <a href="#acasa">Acasă</a>
-                        <a href="#despre">Despre Noi</a>
-                        <a href="#servicii">Servicii</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Servicii Principale</h3>
-                    <div class="footer-links">
-                        <a href="#servicii">Consultații</a>
-                        <a href="#servicii">Vaccinări</a>
-                        <a href="#servicii">Chirurgie</a>
-                        <a href="#servicii">Cosmetică</a>
-                    </div>
+                    <a class="social-circle" href="#" aria-label="Website">
+                        <span class="material-symbols-outlined text-base" style="font-size: 18px;">public</span>
+                    </a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 HelpPets For Life. Toate drepturile rezervate. Site realizat de <a href="https://hrl.dev" target="_blank" rel="noopener noreferrer">hrl.dev</a></p>
-                <div class="footer-legal">
-                    <a href="politica-cookies.html" id="link-politica-cookies">Politica de Cookies</a>
-                    <span class="footer-sep">·</span>
-                    <a href="politica-cookies.html#confidentialitate" id="link-confidentialitate">Confidențialitate & GDPR</a>
-                    <span class="footer-sep">·</span>
-                    <a href="#" id="open-cookie-settings">Setări Cookies</a>
+            <div class="footer-links-col">
+                <h4 class="footer-title">Meniu</h4>
+                <div class="footer-links-list">
+                    <a href="#home">Acasă</a>
+                    <a href="#despre">Filosofia Noastră</a>
+                    <a href="#servicii">Standarde Medicale</a>
+                    <a href="#contact">Locații</a>
                 </div>
+            </div>
+            
+            <div class="footer-emergency-col">
+                <h4 class="footer-title">Contact Urgent</h4>
+                <div class="footer-emergency-box">
+                    <p class="footer-emergency-title">Linie Directă 24/7</p>
+                    <a class="footer-phone-link" href="tel:+40766397087">0766 397 087</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <p>© 2026 HelpPets For Life. Toate drepturile rezervate. Design by Precision Medical.</p>
+            <div class="footer-legal-links">
+                <a href="politica-cookies.html" id="link-politica-cookies">Cookies</a>
+                <span class="footer-sep">·</span>
+                <a href="politica-cookies.html#confidentialitate" id="link-confidentialitate">GDPR</a>
+                <span class="footer-sep">·</span>
+                <a href="#" id="open-cookie-settings">Setări Cookies</a>
             </div>
         </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Consimțământ cookie-uri" aria-modal="true" hidden>
+    <!-- Enhanced Cookie Consent Banner -->
+    <div class="cookie-banner glass-effect" id="cookie-banner" role="dialog" aria-label="Consimțământ cookie-uri" aria-modal="true" hidden>
         <div class="cookie-banner-inner">
             <div class="cookie-banner-text">
-                <strong>Respectăm confidențialitatea ta</strong>
-                <p>Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri analitice pentru a înțelege cum este utilizat site-ul. Nu vândem datele tale nimănui. <a href="politica-cookies.html" id="cookies-more-link">Citește politica noastră</a>.</p>
+                <h5>Confidențialitatea Ta</h5>
+                <p>Personalizăm experiența ta digitală pentru a-ți oferi conținut relevant și servicii optimizate. <a href="politica-cookies.html" id="cookies-more-link">Citește politica noastră</a>.</p>
             </div>
             <div class="cookie-banner-actions">
-                <button id="cookie-accept-all" class="cookie-btn cookie-btn-accept">Accept toate</button>
-                <button id="cookie-accept-necessary" class="cookie-btn cookie-btn-necessary">Doar necesare</button>
-                <button id="cookie-open-settings" class="cookie-btn cookie-btn-settings">Personalizează</button>
+                <button class="btn btn-primary btn-pill button-hover-effect" id="cookie-accept-all">Acceptă Tot</button>
+                <button class="btn btn-outline btn-pill button-hover-effect" id="cookie-open-settings">Configurare</button>
             </div>
         </div>
     </div>
 
-    <!-- Cookie Settings Modal -->
-    <div id="cookie-modal" class="cookie-modal" role="dialog" aria-modal="true" aria-label="Setări cookies" hidden>
+    <!-- Cookie Preferences Settings Modal -->
+    <div class="cookie-modal" id="cookie-modal" role="dialog" aria-modal="true" aria-label="Setări cookies" hidden>
         <div class="cookie-modal-overlay" id="cookie-modal-overlay"></div>
         <div class="cookie-modal-box">
             <div class="cookie-modal-header">
@@ -410,51 +494,52 @@
 
                 <div class="cookie-category">
                     <div class="cookie-category-header">
-                        <div>
+                        <div class="cookie-category-info">
                             <strong>Cookie-uri necesare</strong>
-                            <p>Asigură funcționalitățile de bază ale site-ului, cum ar fi navigarea și accesul la zone securizate.</p>
+                            <p>Asigură funcționalitățile de bază ale site-ului, cum ar fi navigarea, securitatea și accesul la zone protejate.</p>
                         </div>
-                        <label class="cookie-toggle cookie-toggle--disabled" aria-label="Întotdeauna active">
+                        <label class="cookie-toggle disabled" aria-label="Întotdeauna active">
                             <input type="checkbox" checked disabled>
-                            <span class="cookie-toggle-slider"></span>
+                            <span class="cookie-slider"></span>
                         </label>
                     </div>
                 </div>
 
                 <div class="cookie-category">
                     <div class="cookie-category-header">
-                        <div>
+                        <div class="cookie-category-info">
                             <strong>Cookie-uri analitice</strong>
                             <p>Ne ajută să înțelegem cum interacționezi cu site-ul, astfel încât să îl îmbunătățim continuu (de ex. Google Analytics).</p>
                         </div>
                         <label class="cookie-toggle" aria-label="Cookie-uri analitice">
                             <input type="checkbox" id="cookie-analytics">
-                            <span class="cookie-toggle-slider"></span>
+                            <span class="cookie-slider"></span>
                         </label>
                     </div>
                 </div>
 
                 <div class="cookie-category">
                     <div class="cookie-category-header">
-                        <div>
+                        <div class="cookie-category-info">
                             <strong>Cookie-uri de marketing</strong>
                             <p>Permit afișarea de reclame relevante pe alte platforme pe baza vizitelor tale pe site-ul nostru.</p>
                         </div>
                         <label class="cookie-toggle" aria-label="Cookie-uri de marketing">
                             <input type="checkbox" id="cookie-marketing">
-                            <span class="cookie-toggle-slider"></span>
+                            <span class="cookie-slider"></span>
                         </label>
                     </div>
                 </div>
             </div>
+            
             <div class="cookie-modal-footer">
-                <button id="cookie-save-settings" class="cookie-btn cookie-btn-accept">Salvează preferințele</button>
-                <button id="cookie-accept-all-modal" class="cookie-btn cookie-btn-necessary">Accept toate</button>
+                <button class="btn btn-outline button-hover-effect" id="cookie-accept-necessary">Doar Necesare</button>
+                <button class="btn btn-primary button-hover-effect" id="cookie-save-settings">Salvează preferințele</button>
             </div>
         </div>
     </div>
 
-    <!-- JS -->
+    <!-- JS Logic Script -->
     <script src="js/script.js"></script>
 </body>
 </html>

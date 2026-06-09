@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ro"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HelpPets For Life | Excelență în Îngrijirea Veterinară</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#064e3b",
+                        "tertiary": "#4a2400",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "primary-fixed": "#b0f0d6",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#95d3ba",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#80bea6",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#57657a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "tertiary-fixed": "#ffdcc3",
+                        "secondary": "#515f74",
+                        "background": "#f7f9fb",
+                        "on-tertiary-container": "#ff9939",
+                        "outline": "#707974",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "inverse-primary": "#95d3ba",
+                        "on-primary-fixed": "#002117",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#003527",
+                        "on-surface-variant": "#404944",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-container": "#d5e3fc",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "tertiary-container": "#6a3700",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#2b6954",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#bfc9c3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "base": "8px",
+                        "margin-mobile": "24px",
+                        "gutter": "40px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-md": ["42px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fancy-card {
+            perspective: 1000px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fancy-card:hover {
+            transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+            box-shadow: 0 30px 60px -12px rgba(0, 53, 39, 0.15);
+        }
+        .fancy-card::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(135deg, rgba(149, 211, 186, 0.4), rgba(255, 183, 125, 0.3));
+            z-index: -1;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .fancy-card:hover::after {
+            opacity: 1;
+        }
+        .button-hover-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .button-hover-effect::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .button-hover-effect:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+        .bento-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-item:hover {
+            filter: brightness(1.02);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-primary">
+<!-- Luxury Navigation -->
+<header class="fixed top-0 w-full z-50 transition-all duration-500 glass-effect border-b border-white/20">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex items-center justify-between h-24">
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary-fixed rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+<span class="material-symbols-outlined text-primary text-4xl relative z-10" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<span class="font-display-lg text-2xl font-bold text-primary tracking-tighter">HelpPets<span class="font-light italic text-surface-tint">For Life</span></span>
+</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="nav-link font-label-caps text-label-caps text-primary font-bold" href="#home">ACASĂ</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant font-medium tracking-widest" href="#despre">DESPRE NOI</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant font-medium tracking-widest" href="#servicii">SERVICII</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant font-medium tracking-widest" href="#contact">CONTACT</a>
+</div>
+<a class="button-hover-effect bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps text-[10px] uppercase tracking-[0.2em] shadow-2xl flex items-center gap-3 transition-all duration-300 hover:shadow-primary/20 hover:-translate-y-0.5 active:scale-95" href="tel:+40766397087">
+<span class="material-symbols-outlined text-base">call</span>
+            Programări
+        </a>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden" id="home">
+<!-- WebGL Background -->
+<div class="absolute inset-0 w-full h-full">
+<div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-background z-10"></div>
+<div class="opacity-30 scale-110">
+            {{DATA:SCREEN:SCREEN_2}}
+        </div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center py-20">
+<div class="lg:col-span-7 reveal">
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary-fixed/30 border border-primary-fixed/50 mb-8">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-surface-tint opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-surface-tint"></span>
+</span>
+<span class="font-label-caps text-[10px] text-primary-container tracking-widest uppercase">Craiova Bariera · Standarde Europene</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-10">
+                Unde empatia întâlnește <br/>
+<span class="text-surface-tint italic font-normal">medicina de elită</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl leading-[1.8]">
+                La HelpPets For Life, redefinim îngrijirea veterinară prin tehnologie avansată și o conexiune profundă cu pacienții noștri necuvântători. Sănătatea lor este o promisiune pe care o onorăm în fiecare zi.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="button-hover-effect bg-primary text-on-primary px-10 py-5 rounded-xl font-label-caps text-label-caps font-bold shadow-2xl hover:shadow-primary/30 transition-all text-center" href="tel:+40766397087">APEL URGENȚĂ</a>
+<a class="group glass-effect text-primary px-10 py-5 rounded-xl font-label-caps text-label-caps font-bold hover:bg-white transition-all text-center flex items-center justify-center gap-3" href="#servicii">
+                    EXPLOREAZĂ SERVICIILE
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative reveal" style="transition-delay: 300ms;">
+<div class="relative p-6 md:p-10 glass-effect rounded-[60px] border-white/50 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] overflow-hidden group">
+<div class="relative rounded-[40px] overflow-hidden">
+<img alt="Pet care at HelpPets" class="w-full h-[600px] object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsLGVT0cFj_A6Yig6EknLc2S-WQaloe_MoOYWTHMt195Z4VfnYwzw3wRQv3QivGSt5dGRASJGdFK27YB83SHiZfQgZHjx1-juuqITK7uN3P08VgZme3niPASIoz6UbzpxBhHpAacVdc99H-yMZZAxMgvinpAkiYNlOBWBbon1qIKvY99Hq3o2GTnXn0J42JZoh9d32jwEz2xKuIHPikCHWrTteVdKmxWlFuQQsZ8Sqvb4goLxn_bIOFVc5G"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+</div>
+</div>
+<!-- Decorative luxury accents -->
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-fixed/40 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+<div class="absolute -top-20 -left-20 w-80 h-80 bg-tertiary-fixed/30 rounded-full blur-[120px] -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Trusted Product Feature Bar -->
+<div class="relative z-30 -mt-16 pb-16">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-12 glass-effect rounded-[40px] shadow-2xl border-white/60">
+<div class="flex flex-col items-center text-center gap-4 reveal">
+<div class="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-5xl">verified_user</span>
+</div>
+<h4 class="font-headline-sm text-primary text-xl uppercase tracking-tighter">Medici Specialiști</h4>
+<p class="font-body-md text-on-surface-variant max-w-[200px]">Peste 15 ani de expertiză clinică în medicină internă.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 reveal border-x border-outline-variant/30 px-8" style="transition-delay: 200ms;">
+<div class="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-5xl">biotech</span>
+</div>
+<h4 class="font-headline-sm text-primary text-xl uppercase tracking-tighter">Tehnologie 4.0</h4>
+<p class="font-body-md text-on-surface-variant max-w-[200px]">Diagnosticare instantă prin laborator propriu modern.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 reveal" style="transition-delay: 400ms;">
+<div class="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-5xl">emergency_share</span>
+</div>
+<h4 class="font-headline-sm text-primary text-xl uppercase tracking-tighter">Unitate Urgențe</h4>
+<p class="font-body-md text-on-surface-variant max-w-[200px]">Răspuns critic și suport continuu pentru pacienți.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Style About Section -->
+<section class="py-section-gap bg-surface-container-lowest overflow-hidden" id="despre">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full">
+<!-- Content Card -->
+<div class="lg:col-span-6 flex flex-col justify-center reveal px-4">
+<p class="font-label-caps text-surface-tint mb-6 tracking-[0.3em] uppercase">Esența Valorilor Noastre</p>
+<h2 class="font-display-lg text-headline-md md:text-[64px] text-primary mb-10 leading-[1.1]">Inovație în slujba <br/><span class="italic font-normal">iubirii necondiționate</span></h2>
+<div class="space-y-8 mb-12">
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                        La HelpPets For Life, am creat un sanctuar medical unde fiecare detaliu este gândit pentru a reduce stresul prietenilor noștri blănoși. 
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+<div class="group flex items-center gap-4 py-4 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-surface-tint group-hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="font-body-md font-semibold text-primary">Mediu Calm (Fear-Free)</span>
+</div>
+<div class="group flex items-center gap-4 py-4 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-surface-tint group-hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">science</span>
+<span class="font-body-md font-semibold text-primary">Protocoale Clinice Moderne</span>
+</div>
+<div class="group flex items-center gap-4 py-4 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-surface-tint group-hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+<span class="font-body-md font-semibold text-primary">Nutriție de Specialitate</span>
+</div>
+<div class="group flex items-center gap-4 py-4 border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-surface-tint group-hover:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">medical_information</span>
+<span class="font-body-md font-semibold text-primary">Istoric Digital Complet</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Image Bento Grid -->
+<div class="lg:col-span-6 grid grid-cols-2 grid-rows-2 gap-6 min-h-[600px] reveal" style="transition-delay: 300ms;">
+<div class="col-span-2 row-span-1 bento-item relative overflow-hidden rounded-[40px] shadow-xl group">
+<img alt="Clinical Excellence" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida/AP1WRLuGYWJJZUkvmliOCLq_nNYj8CjTykWYi2Val3hZuMfFH6pMCHE04IF-9gKEp6du16pWdSXzYzXBmcWMbqbtxhUGnZTOiAn27YE5y98F94NrT5PyAXZE1kgcpoxzvW_qAFVAWxprjq_1m0gKzT3L6JjBtaNlbcISVMBADJHHlODQbS21jsRdlGb7takZ-mVIYi5tSoZzziCRDmhlfpxWq1MlqovYGZDw6TBrnkIvrWtVtbpKN025ZSq11JXD"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="col-span-1 bento-item bg-primary-container p-10 rounded-[40px] flex flex-col justify-between text-white">
+<p class="font-display-lg text-5xl">100%</p>
+<p class="font-label-caps text-[10px] opacity-70 uppercase tracking-widest">Rata de Satisfacție a Proprietarilor</p>
+</div>
+<div class="col-span-1 bento-item bg-tertiary-container p-10 rounded-[40px] flex flex-col justify-between text-on-tertiary-container">
+<p class="font-display-lg text-5xl text-tertiary-fixed">15k+</p>
+<p class="font-label-caps text-[10px] text-tertiary-fixed/70 uppercase tracking-widest">Pacienți Îngrijiți cu succes</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Luxury Bento Section -->
+<section class="py-section-gap bg-background" id="servicii">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+<div class="max-w-2xl">
+<p class="font-label-caps text-surface-tint mb-6 tracking-[0.3em] uppercase">Excelență în Servicii</p>
+<h2 class="font-display-lg text-headline-md md:text-display-lg text-primary leading-tight">Soluții medicale de <br/> <span class="italic font-normal">nouă generație</span></h2>
+</div>
+<div class="mt-8 md:mt-0">
+<a class="inline-flex items-center gap-4 text-primary font-bold group" href="#contact">
+                    VEZI TOATE SERVICIILE
+                    <span class="w-12 h-12 rounded-full border border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">arrow_outward</span>
+</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+<!-- Large Card 1 -->
+<div class="lg:col-span-2 lg:row-span-2 fancy-card bg-white p-12 rounded-[48px] border border-outline-variant/30 flex flex-col justify-between group">
+<div>
+<div class="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-5xl">stethoscope</span>
+</div>
+<h3 class="font-display-lg text-4xl text-primary mb-6">Consultații de Specialitate</h3>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                        Evaluări clinice profunde, susținute de experiența vastă a echipei noastre, pentru diagnosticarea precoce a oricărei afecțiuni.
+                    </p>
+</div>
+<div class="mt-12 flex flex-wrap gap-4">
+<span class="px-4 py-2 rounded-full bg-surface-container text-primary font-bold text-[10px] uppercase tracking-wider">Cardiologie</span>
+<span class="px-4 py-2 rounded-full bg-surface-container text-primary font-bold text-[10px] uppercase tracking-wider">Dermatologie</span>
+<span class="px-4 py-2 rounded-full bg-surface-container text-primary font-bold text-[10px] uppercase tracking-wider">Neurologie</span>
+</div>
+</div>
+<!-- Standard Card 2 -->
+<div class="fancy-card bg-white p-10 rounded-[48px] border border-outline-variant/30 group">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">vaccines</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-4">Profilaxie</h3>
+<p class="font-body-md text-on-surface-variant">Vaccinări și deparazitări cu produse de top, adaptate stilului de viață.</p>
+</div>
+<!-- Standard Card 3 -->
+<div class="fancy-card bg-white p-10 rounded-[48px] border border-outline-variant/30 group">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">content_cut</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-4">Micro-Chirurgie</h3>
+<p class="font-body-md text-on-surface-variant">Intervenții minim invazive realizate sub monitorizare vitală permanentă.</p>
+</div>
+<!-- Standard Card 4 -->
+<div class="fancy-card bg-white p-10 rounded-[48px] border border-outline-variant/30 group">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">lab_research</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-4">Laborator</h3>
+<p class="font-body-md text-on-surface-variant">Biochimie, hematologie și teste rapide în mai puțin de 30 minute.</p>
+</div>
+<!-- Standard Card 5 -->
+<div class="fancy-card bg-white p-10 rounded-[48px] border border-outline-variant/30 group">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">dentistry</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-4">Stomatologie</h3>
+<p class="font-body-md text-on-surface-variant">Detartraj ultrasonic și intervenții chirurgicale dentare premium.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Location Section -->
+<section class="py-section-gap bg-surface-container-high" id="contact">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 reveal">
+<p class="font-label-caps text-surface-tint mb-6 tracking-[0.3em] uppercase">Vino să ne cunoști</p>
+<h2 class="font-display-lg text-headline-md md:text-5xl text-primary mb-12">Locație &amp; <br/> <span class="italic font-normal">Disponibilitate</span></h2>
+<div class="space-y-12">
+<div class="flex items-start gap-8 group">
+<div class="w-14 h-14 bg-white rounded-2xl shadow-md flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-primary text-xl mb-2">Clinica Craiova</h4>
+<p class="font-body-md text-on-surface-variant">Strada Bariera Vâlcii nr. 17B, <br/>Craiova, Dolj, 200100</p>
+</div>
+</div>
+<div class="flex items-start gap-8 group">
+<div class="w-14 h-14 bg-white rounded-2xl shadow-md flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="w-full">
+<h4 class="font-headline-sm text-primary text-xl mb-4">Program de lucru</h4>
+<div class="space-y-4 max-w-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Luni - Vineri</span>
+<span class="font-bold text-primary">09:00 - 19:00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Sâmbătă</span>
+<span class="font-bold text-primary">09:00 - 14:00</span>
+</div>
+<div class="flex items-center gap-2 text-error text-sm italic pt-2">
+<span class="material-symbols-outlined text-xs">event_busy</span>
+                                    Duminică: Urgențe Majore Doar
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 reveal h-[650px] relative" style="transition-delay: 400ms;">
+<div class="absolute inset-0 bg-primary/10 rounded-[60px] translate-x-4 translate-y-4 -z-10"></div>
+<div class="w-full h-full rounded-[60px] overflow-hidden border-[12px] border-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] group">
+<img alt="HelpPets Location Map" class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ7m0KfW8VnzWnJmPm4o6aY5e_hxZTJCGzTPOjhdHSoSsPg1_fdNMoKRdjTxJB3BTeASm7SV2eMpmDKUV5fqG1MFubpXyLjop3D9oEyXNHH3azulZNpFYl-qK41mQ0kogembqogihHfElS8AEUMPE7XH9efgvircP7Iyyi9XzeSGISj0_ypBCOjFV80CTJu-otblxNP6XpfKAkS9RErLxLVfG1WYKUoPvp0c7gcVI97-CmVKwH32UK7kYP7AFq_5XMg9uF2FUmKvni"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Luxury Footer -->
+<section class="py-section-gap bg-surface-container-low overflow-hidden" id="testimoniale">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-24 reveal">
+<p class="font-label-caps text-surface-tint mb-6 tracking-[0.3em] uppercase">Voci de Încredere</p>
+<h2 class="font-display-lg text-headline-md md:text-display-lg text-primary leading-tight">Ce spun <span class="italic font-normal">prietenii noștri</span></h2>
+</div>
+<div class="relative max-w-4xl mx-auto reveal" style="transition-delay: 200ms;">
+<!-- Testimonial Slider Container -->
+<div class="relative glass-effect rounded-[48px] p-10 md:p-20 border-white/60 shadow-2xl overflow-hidden">
+<div class="flex flex-col items-center text-center">
+<!-- Star Rating -->
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Quote -->
+<blockquote class="font-display-lg text-2xl md:text-4xl text-primary italic leading-relaxed mb-12">
+                        "O experiență cu adevărat premium. Atenția la detalii și dragostea pentru animale se simt în fiecare colț al clinicii."
+                    </blockquote>
+<!-- Author -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-1 bg-primary-fixed mb-4 rounded-full"></div>
+<cite class="font-label-caps text-primary font-bold not-italic tracking-widest uppercase">Elena &amp; Luna</cite>
+</div>
+</div>
+<!-- Decorative Quote Icon -->
+<span class="material-symbols-outlined absolute top-10 left-10 text-primary/5 text-9xl -z-10">format_quote</span>
+</div>
+<!-- Navigation Controls -->
+<div class="flex justify-center gap-8 mt-12">
+<button class="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:shadow-[0_0_20px_rgba(255,183,125,0.4)] transition-all duration-500 group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+</button>
+<button class="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:shadow-[0_0_20px_rgba(255,183,125,0.4)] transition-all duration-500 group">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section><footer class="bg-primary text-white pt-32 pb-12 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-4 gap-20">
+<div class="md:col-span-2">
+<div class="flex items-center gap-4 mb-10">
+<span class="material-symbols-outlined text-primary-fixed text-5xl">pets</span>
+<span class="font-display-lg text-4xl font-bold tracking-tighter">HelpPets <br/><span class="font-light italic opacity-60">For Life</span></span>
+</div>
+<p class="font-body-lg text-primary-fixed/60 mb-12 max-w-md leading-relaxed">
+                Unde pasiunea pentru viață se întâlnește cu rigoarea științifică. Excelență medicală veterinară în inima Craiovei.
+            </p>
+<div class="flex gap-6">
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-base">face_nod</span></a>
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300" href="#"><span class="material-symbols-outlined text-base">public</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-xs text-primary-fixed mb-10 tracking-[0.4em] uppercase">Meniu</h4>
+<ul class="space-y-6 font-body-md text-white/70">
+<li><a class="hover:text-primary-fixed transition-colors" href="#home">Acasă</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#despre">Filosofia Noastră</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#servicii">Standarde Medicale</a></li>
+<li><a class="hover:text-primary-fixed transition-colors" href="#contact">Locații</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-xs text-primary-fixed mb-10 tracking-[0.4em] uppercase">Contact Urgent</h4>
+<div class="p-8 rounded-3xl bg-white/5 border border-white/10">
+<p class="text-xs text-primary-fixed/60 mb-4 uppercase tracking-widest">Linie Directă 24/7</p>
+<a class="text-primary-fixed font-display-lg text-3xl block hover:underline" href="tel:+40766397087">0766 397 087</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] text-white/30 uppercase tracking-[0.2em]">
+<p>© 2026 HelpPets For Life. Toate drepturile rezervate. Design by Precision Medical.</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">Cookies</a>
+<a class="hover:text-white transition-colors" href="#">GDPR</a>
+<a class="hover:text-white transition-colors" href="#">Termeni</a>
+</div>
+</div>
+</footer>
+<!-- Enhanced Cookie Consent -->
+<div class="fixed bottom-12 left-1/2 -translate-x-1/2 w-[95%] md:w-auto glass-effect border border-white/40 p-8 rounded-[32px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] z-[100] transform translate-y-48 transition-transform duration-700" id="cookie-banner">
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="flex-1">
+<h5 class="font-headline-sm text-primary text-lg mb-2">Confidențialitatea Ta</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Personalizăm experiența ta digitală pentru a-ți oferi conținut relevant. <a class="underline text-primary font-bold" href="#">Află mai multe</a>.</p>
+</div>
+<div class="flex gap-4">
+<button class="button-hover-effect bg-primary text-on-primary px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg" onclick="hideCookies()">Acceptă Tot</button>
+<button class="bg-surface-variant text-on-surface-variant px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-outline-variant/20 transition-all" onclick="hideCookies()">Configurare</button>
+</div>
+</div>
+</div>
+<script>
+    // Advanced Intersection Observer for smooth reveal
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('active');
+                }, index * 50);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Dynamic Header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.remove('h-24');
+            header.classList.add('h-20', 'shadow-2xl');
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        } else {
+            header.classList.add('h-24');
+            header.classList.remove('h-20', 'shadow-2xl');
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+        }
+    });
+
+    // Cookie banner delay
+    setTimeout(() => {
+        document.getElementById('cookie-banner').classList.remove('translate-y-48');
+    }, 2000);
+
+    function hideCookies() {
+        document.getElementById('cookie-banner').classList.add('translate-y-[200%]');
+    }
+
+    // Parallax effect on Hero Image
+    document.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
+        const heroImg = document.querySelector('.group img');
+        if (heroImg) {
+            heroImg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+        }
+    });
+</script>
+</body></html>
